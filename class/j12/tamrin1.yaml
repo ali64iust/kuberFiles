@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: webserver4
+ labels:
+  app: myapp3
+spec:
+ containers:
+  - name: myapp1
+    image: busybox
+    imagePullPolicy: IfNotPresent
+    command: ['ping','myapp2']
+
+  - name: myapp2
+    image: busybox
+    imagePullPolicy: IfNotPresent
+    command: ['sleep', '200000']
+
