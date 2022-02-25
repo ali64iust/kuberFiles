@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: resource-example2 
+ labels:
+   app: resource
+
+spec:
+ containers:
+  - name: nginx
+    image:  nginx:latest
+    imagePullPolicy: IfNotPresent
+    resources:
+     requests:
+      cpu: "100m"
+      memory: "10Gi"
+#chon 10G ram nadarim kubectl get po ==> pending mimone
