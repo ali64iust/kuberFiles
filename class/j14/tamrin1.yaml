@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+ name: tamrin1
+ labels:  
+   app: myapp
+spec:
+ replicas: 3
+ selector:
+  matchLabels: 
+   app:  gb-frontend
+ template:
+  metadata:
+   labels: 
+    app:  gb-frontend
+  spec:
+   containers: 
+    - name: gb-frontend
+      image: gcr.io/google-samples/gb-frontend:v4
+      imagePullPolicy: IfNotPresent
+      resources:
+       requests:
+        memory: "100Mi"
+        cpu: "100m"
+      env:
+       - name: GET_HOSTS_FROM
+         value: dns

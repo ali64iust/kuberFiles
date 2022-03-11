@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+ name: deploymentapp
+ annotations:
+  appname: searchname
+  appversion: ver2
+  repoaddress: https://myrepo.kahkeshan.com
+  hash: kkdjkadhkknkasdkjhwkjqwhekjqek
+  released: 12
+  author: ali
+ labels:  
+   app: myappv1
+spec:
+ replicas: 3
+ selector:
+  matchLabels: 
+   app: payapp
+ template:
+  metadata:
+   labels: 
+    app: payapp
+  spec:
+   containers: 
+    - name: nginx
+      image: nginx:latest
+      imagePullPolicy: IfNotPresent
+   nodeSelector:
+    hdd: ssd
+

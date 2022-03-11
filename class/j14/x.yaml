@@ -1,0 +1,387 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: d28edd0aa982a4c68346b745a16c10794da752c59c3cb4cf0162741dc2351b24
+      cni.projectcalico.org/podIP: 10.109.1.159/32
+      cni.projectcalico.org/podIPs: 10.109.1.159/32
+    creationTimestamp: "2022-03-11T07:53:42Z"
+    generateName: logdaemonset-
+    labels:
+      app: logapp
+      controller-revision-hash: 5f95c786fd
+      pod-template-generation: "1"
+    name: logdaemonset-fbh2k
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: logdaemonset
+      uid: 45ea9b6a-02d6-4efc-84d3-299da2ded204
+    resourceVersion: "370870"
+    uid: 70e98648-6ba4-467e-89c0-67d10b1a2736
+  spec:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchFields:
+            - key: metadata.name
+              operator: In
+              values:
+              - ali-worker1
+    containers:
+    - image: nginx:latest
+      imagePullPolicy: IfNotPresent
+      name: nginx
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-wkkc9
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: ali-worker1
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/disk-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/memory-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/pid-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/unschedulable
+      operator: Exists
+    volumes:
+    - name: kube-api-access-wkkc9
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2022-03-11T07:53:41Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2022-03-11T07:53:43Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2022-03-11T07:53:43Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2022-03-11T07:53:42Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://78349afd27385accff49915dee7f72be4582fb48a3228e8ea8132bc39e9e2c77
+      image: nginx:latest
+      imageID: docker://sha256:c316d5a335a5cf324b0dc83b3da82d7608724769f6454f6d9a621f3ec2534a5a
+      lastState: {}
+      name: nginx
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2022-03-11T07:53:43Z"
+    hostIP: 192.168.21.105
+    phase: Running
+    podIP: 10.109.1.159
+    podIPs:
+    - ip: 10.109.1.159
+    qosClass: BestEffort
+    startTime: "2022-03-11T07:53:41Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 3ca49a81c72be0ddc3f0b3f85a378824c7e17d18877e5574d1802f49cffb1b1d
+      cni.projectcalico.org/podIP: 10.98.129.34/32
+      cni.projectcalico.org/podIPs: 10.98.129.34/32
+    creationTimestamp: "2022-03-11T07:53:42Z"
+    generateName: logdaemonset-
+    labels:
+      app: logapp
+      controller-revision-hash: 5f95c786fd
+      pod-template-generation: "1"
+    name: logdaemonset-wxdvv
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: logdaemonset
+      uid: 45ea9b6a-02d6-4efc-84d3-299da2ded204
+    resourceVersion: "370868"
+    uid: 41ffd1ee-a965-4f8d-94aa-7298359038d1
+  spec:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchFields:
+            - key: metadata.name
+              operator: In
+              values:
+              - ali-worker2
+    containers:
+    - image: nginx:latest
+      imagePullPolicy: IfNotPresent
+      name: nginx
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-rccwr
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: ali-worker2
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/disk-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/memory-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/pid-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/unschedulable
+      operator: Exists
+    volumes:
+    - name: kube-api-access-rccwr
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2022-03-11T07:53:42Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2022-03-11T07:53:43Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2022-03-11T07:53:43Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2022-03-11T07:53:42Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://50fb7adb0c845464bb9f1d886b94d8de7c073578b34af1cb3fb14093830c2904
+      image: nginx:latest
+      imageID: docker://sha256:c316d5a335a5cf324b0dc83b3da82d7608724769f6454f6d9a621f3ec2534a5a
+      lastState: {}
+      name: nginx
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2022-03-11T07:53:43Z"
+    hostIP: 192.168.21.106
+    phase: Running
+    podIP: 10.98.129.34
+    podIPs:
+    - ip: 10.98.129.34
+    qosClass: BestEffort
+    startTime: "2022-03-11T07:53:42Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 4a1712921949aceaf4a3ee2b6c9e043a7a6d92d1df065a7131a09b91c2d0a993
+      cni.projectcalico.org/podIP: 10.109.1.158/32
+      cni.projectcalico.org/podIPs: 10.109.1.158/32
+    creationTimestamp: "2022-03-11T07:24:08Z"
+    deletionGracePeriodSeconds: 30
+    deletionTimestamp: "2022-03-11T07:27:15Z"
+    generateName: tamrin1-778677c846-
+    labels:
+      app: gb-frontend
+      pod-template-hash: 778677c846
+    name: tamrin1-778677c846-zz2w8
+    namespace: default
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: tamrin1-778677c846
+      uid: f6c480eb-261f-4d4b-9495-1c7d166a74fa
+    resourceVersion: "368540"
+    uid: e08672c9-26c8-44c1-bc89-37c6c4c0bfe2
+  spec:
+    containers:
+    - env:
+      - name: GET_HOSTS_FROM
+        value: dns
+      image: gcr.io/google-samples/gb-frontend:v4
+      imagePullPolicy: IfNotPresent
+      name: gb-frontend
+      resources:
+        requests:
+          cpu: 100m
+          memory: 100Mi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-xq94w
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: ali-worker1
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-xq94w
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2022-03-11T07:24:08Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2022-03-11T07:24:08Z"
+      message: 'containers with unready status: [gb-frontend]'
+      reason: ContainersNotReady
+      status: "False"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2022-03-11T07:24:08Z"
+      message: 'containers with unready status: [gb-frontend]'
+      reason: ContainersNotReady
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2022-03-11T07:24:08Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - image: gcr.io/google-samples/gb-frontend:v4
+      imageID: ""
+      lastState: {}
+      name: gb-frontend
+      ready: false
+      restartCount: 0
+      started: false
+      state:
+        waiting:
+          reason: ContainerCreating
+    hostIP: 192.168.21.105
+    phase: Pending
+    qosClass: Burstable
+    startTime: "2022-03-11T07:24:08Z"
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

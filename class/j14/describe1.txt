@@ -1,0 +1,172 @@
+Name:                      tamrin1-778677c846-6zsbp
+Namespace:                 default
+Priority:                  0
+Node:                      ali-worker2/192.168.21.106
+Start Time:                Fri, 11 Mar 2022 10:54:08 +0330
+Labels:                    app=gb-frontend
+                           pod-template-hash=778677c846
+Annotations:               cni.projectcalico.org/containerID: bb45bd6be2f2d047a7f7d9f91a0686e7c123f7c66a0c35144e2fcbe4f0fba4e8
+                           cni.projectcalico.org/podIP: 10.98.129.32/32
+                           cni.projectcalico.org/podIPs: 10.98.129.32/32
+Status:                    Terminating (lasts 17s)
+Termination Grace Period:  30s
+IP:                        
+IPs:                       <none>
+Controlled By:             ReplicaSet/tamrin1-778677c846
+Containers:
+  gb-frontend:
+    Container ID:   
+    Image:          gcr.io/google-samples/gb-frontend:v4
+    Image ID:       
+    Port:           <none>
+    Host Port:      <none>
+    State:          Waiting
+      Reason:       ContainerCreating
+    Ready:          False
+    Restart Count:  0
+    Requests:
+      cpu:     100m
+      memory:  100Mi
+    Environment:
+      GET_HOSTS_FROM:  dns
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-bzj95 (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-bzj95:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason       Age    From               Message
+  ----     ------       ----   ----               -------
+  Normal   Scheduled    3m24s  default-scheduler  Successfully assigned default/tamrin1-778677c846-6zsbp to ali-worker2
+  Warning  FailedMount  3m23s  kubelet            MountVolume.SetUp failed for volume "kube-api-access-bzj95" : failed to sync configmap cache: timed out waiting for the condition
+  Normal   Pulling      3m21s  kubelet            Pulling image "gcr.io/google-samples/gb-frontend:v4"
+
+
+Name:                      tamrin1-778677c846-mczbn
+Namespace:                 default
+Priority:                  0
+Node:                      ali-worker2/192.168.21.106
+Start Time:                Fri, 11 Mar 2022 10:54:08 +0330
+Labels:                    app=gb-frontend
+                           pod-template-hash=778677c846
+Annotations:               cni.projectcalico.org/containerID: ad89e46f3ba60a68577fb0fe116640208652dfcdcf9890588248075512c8f39e
+                           cni.projectcalico.org/podIP: 10.98.129.33/32
+                           cni.projectcalico.org/podIPs: 10.98.129.33/32
+Status:                    Terminating (lasts 17s)
+Termination Grace Period:  30s
+IP:                        
+IPs:                       <none>
+Controlled By:             ReplicaSet/tamrin1-778677c846
+Containers:
+  gb-frontend:
+    Container ID:   
+    Image:          gcr.io/google-samples/gb-frontend:v4
+    Image ID:       
+    Port:           <none>
+    Host Port:      <none>
+    State:          Waiting
+      Reason:       ContainerCreating
+    Ready:          False
+    Restart Count:  0
+    Requests:
+      cpu:     100m
+      memory:  100Mi
+    Environment:
+      GET_HOSTS_FROM:  dns
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-cftmx (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-cftmx:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason       Age    From               Message
+  ----     ------       ----   ----               -------
+  Normal   Scheduled    3m24s  default-scheduler  Successfully assigned default/tamrin1-778677c846-mczbn to ali-worker2
+  Warning  FailedMount  3m23s  kubelet            MountVolume.SetUp failed for volume "kube-api-access-cftmx" : failed to sync configmap cache: timed out waiting for the condition
+  Normal   Pulling      3m21s  kubelet            Pulling image "gcr.io/google-samples/gb-frontend:v4"
+
+
+Name:                      tamrin1-778677c846-zz2w8
+Namespace:                 default
+Priority:                  0
+Node:                      ali-worker1/192.168.21.105
+Start Time:                Fri, 11 Mar 2022 10:54:08 +0330
+Labels:                    app=gb-frontend
+                           pod-template-hash=778677c846
+Annotations:               cni.projectcalico.org/containerID: 4a1712921949aceaf4a3ee2b6c9e043a7a6d92d1df065a7131a09b91c2d0a993
+                           cni.projectcalico.org/podIP: 10.109.1.158/32
+                           cni.projectcalico.org/podIPs: 10.109.1.158/32
+Status:                    Terminating (lasts 17s)
+Termination Grace Period:  30s
+IP:                        
+IPs:                       <none>
+Controlled By:             ReplicaSet/tamrin1-778677c846
+Containers:
+  gb-frontend:
+    Container ID:   
+    Image:          gcr.io/google-samples/gb-frontend:v4
+    Image ID:       
+    Port:           <none>
+    Host Port:      <none>
+    State:          Waiting
+      Reason:       ContainerCreating
+    Ready:          False
+    Restart Count:  0
+    Requests:
+      cpu:     100m
+      memory:  100Mi
+    Environment:
+      GET_HOSTS_FROM:  dns
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-xq94w (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-xq94w:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason       Age    From               Message
+  ----     ------       ----   ----               -------
+  Normal   Scheduled    3m24s  default-scheduler  Successfully assigned default/tamrin1-778677c846-zz2w8 to ali-worker1
+  Warning  FailedMount  3m23s  kubelet            MountVolume.SetUp failed for volume "kube-api-access-xq94w" : failed to sync configmap cache: timed out waiting for the condition
+  Normal   Pulling      3m21s  kubelet            Pulling image "gcr.io/google-samples/gb-frontend:v4"

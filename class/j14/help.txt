@@ -1,0 +1,15 @@
+kubectl get node --show-labels
+kubectl label nodes ali-worker1 hdd=ssd
+kubectl get po -o wide
+kubectl label nodes ali-worker1 hdd-
+
+kubectl create deployment nginxapp --image=nginx:latest -o yaml --dry-run=client > example6.yaml
+
+kubectl get service
+
+kubectl create deployment nginxdeployment1 --image=nginx:latest --replicas=5 --dry-run=client -o yaml > creat1.yaml
+
+kubectl apply -f creat1.yaml
+
+l
+se deployment nginxdeployment1 --type=ClusterIP --target-port=80 --port=80 --dry-run=client -o yaml > c1.yaml
