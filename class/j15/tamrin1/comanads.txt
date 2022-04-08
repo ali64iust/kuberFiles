@@ -1,0 +1,16 @@
+kubectl create deployment redis --image=redis:alpine --replicas=1 --dry-run=client -o yaml > redis.yaml
+
+kubectl create deployment db --image=postgres:9.4 --replicas=1 --dry-run=client -o yaml > db.yaml
+
+kubectl create deployment result --image=dockersamples/examplevotingapp_result:before --replicas=1 --dry-run=client -o yaml > result.yaml
+
+kubectl create deployment vote --image=dockersamples/examplevotingapp_vote:before --replicas=1 --dry-run=client -o yaml > vote.yaml
+
+kubectl create deployment worker --image=dockersamples/examplevotingapp_worker:before --replicas=1 --dry-run=client -o yaml > worker.yaml
+
+
+
+
+
+
+kubectl expose deployment redis --type=NodePort --port=80 --target-port=80 --dry-run=client -o yaml >> example1.yaml
