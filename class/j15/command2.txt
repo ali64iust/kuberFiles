@@ -1,0 +1,1 @@
+ kubectl expose deployment payappdeployment --type=NodePort --port=80 --target-port=80 --dry-run=client -o yaml >> example1.yaml

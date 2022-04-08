@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: payappdeployment
+  name: payappdeployment
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: payappdeployment
+  type: LoadBalancer
+status:
+  loadBalancer: {}

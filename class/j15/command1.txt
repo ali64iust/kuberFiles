@@ -1,0 +1,1 @@
+kubectl create deployment payappdeployment --image=nginx --replicas=2 --dry-run=client -o yaml > example1.yaml
