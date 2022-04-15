@@ -1,0 +1,2 @@
+/var/nfs_share 192.168.21.0/24(rw,sync,root_squash,all_squash)
+
