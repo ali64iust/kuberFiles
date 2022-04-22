@@ -1,0 +1,1 @@
+kubectl create configmap users --from-literal=name=ali --from-literal=family=imani --from-literal=age=35 -o yaml > users.yaml

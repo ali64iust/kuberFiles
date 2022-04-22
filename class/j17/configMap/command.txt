@@ -1,0 +1,2 @@
+kubectl create configmap nginxConfig --from-file=defaul.conf --dry-run=client -o yaml > nginxconfig.yaml
+kubectl create deployment nginx --image=nginx:lates --dry-run=client -o yaml > nginx.yaml

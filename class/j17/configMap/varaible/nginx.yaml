@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx2
+  name: nginx2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx2
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx2
+    spec:
+      containers:
+        - image: nginx:latest
+          name: nginx2
+          imagePullPolicy: IfNotPresent
+          env:
+           - name: family
+             valueFrom:
+              configMapKeyRef:
+               name: users
+               key: family
+           - name: name
+             valueFrom:
+              configMapKeyRef:
+               name: users
+               key: name

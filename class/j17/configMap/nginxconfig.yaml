@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  defaul.conf: |
+    server {
+     root /usr/share/nginx/html;
+     server_name www.amin.com;
+     index index.html index.html;
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: nginxconfig

@@ -1,0 +1,9 @@
+kubectl create deployment nginx --image=nginx:latest --dry-run=client -o yaml > nginx.yaml
+
+yum -y install nfs-utils
+
+ vim /etc/exports
+/var/nfs_folder  192.168.21.0/24(rw,sync,root_squash,all_squash)
+
+
+
