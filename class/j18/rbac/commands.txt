@@ -1,0 +1,21 @@
+openssl genrsa -out amin.key 2048
+openssl req -new -key amin.key -out amin.csr -subj "/CN=amin/O=kubergroup"
+
+to in masir ca hast /etc/kubernetes/pki/
+
+openssl x509 -req -in amin.csr -CA /etc/kubernetes/pki/ca.crt -CAkey /etc/kubernetes/pki/ca.key -CAcreateserial -out amin.crt
+
+copy amin.* to server that user amin exist
+
+kubectl config set-cluster kubernetes --certificate-authority=ca.crt --embed-certs=true --server=https://192.168.21.104:6443
+
+kubectl config set-credentials amin --client-certificate=amin.crt --client-key=amin.key --embed-certs=true
+
+kubectl config set-context kubernetes-prod --cluster=kubernetes --user=amin
+
+kubectl config use-context kubernetes-prod
+
+
+----- impertive mode
+kubectl create role servicereader --verb=get --resource=services
+

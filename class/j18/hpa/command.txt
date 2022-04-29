@@ -1,0 +1,21 @@
+ kubectl create deployment php_hpa --image=hpaapp:latest --dry-run=client -o yaml > php_hpa.yaml
+
+kubectl autoscale deployment php-hpa --cpu-percent=50 --min=1 --max=10 --dry-run=client -o yaml > hpa.yaml
+
+
+ kubectl run -i tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://ipservice/index.php; done"
+
+
+https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+change: arg:
+ - --kubelet-insecure-tls
+
+
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+
+
+kubectl expose deployment php-hpa --type=ClusterIP --port=80 --target-port=80
+
+
+kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://10.103.217.252/index.php; done"

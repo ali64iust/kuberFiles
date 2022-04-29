@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: php_hpa
+  name: php-hpa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php_hpa
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: php_hpa
+    spec:
+      containers:
+      - image: hpaapp:latest
+        name: hpaapp
+        imagePullPolicy: IfNotPresent
+        resources: 
+         limits:
+          cpu: 500m
+         requests: 
+          cpu: 200m
+           
+         
+status: {}
