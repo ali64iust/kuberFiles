@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: web3
+  name: web3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web3
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: web3
+    spec:
+      containers:
+      - image: nginx:latest
+        name: nginx
+        imagePullPolicy: IfNotPresent

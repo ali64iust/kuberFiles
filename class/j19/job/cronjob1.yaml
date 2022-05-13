@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  creationTimestamp: null
+  name: cronob1
+spec:
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+      name: cronob1
+    spec:
+      template:
+        metadata:
+          creationTimestamp: null
+        spec:
+          containers:
+          - image: busybox
+            name: cronob1
+            command: ["sleep","70"]
+          restartPolicy: OnFailure
+  schedule: '* * * * *'

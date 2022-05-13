@@ -1,0 +1,1 @@
+kubectl create cronjob cronob1 --image=busybox --dry-run=client -o yaml --schedule=* cronjob1.yaml job1.yaml job2.yaml cronjob1.yaml job1.yaml job2.yaml cronjob1.yaml job1.yaml job2.yaml * > cronjob1.yaml

@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+ name: job1
+spec:
+ template:
+  metadata:
+   name: job1
+  spec:
+   containers:
+    - name: job1
+      image: busybox
+      command: ["echo" , "Running a job"]
+   restartPolicy: OnFailure

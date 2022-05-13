@@ -1,0 +1,8 @@
+kubectl api-resources | grep network
+kubectl create deployment web1 --image=nginx:latest --dry-run=client -o yaml > nginx.yaml
+
+kubectl expose deployment web1 --target-port=80 --type=ClusterIP --port=80
+
+kubectl expose deployment web1 --target-port=80 --type=NodePort --port=80 -o yaml
+
+
